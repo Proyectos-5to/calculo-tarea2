@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    
+</head>
+<style>
+    
+</style>
+
+<body bgcolor="yellow">
+    <center>
+        <h3>La maquina intentara adivinar el numero que estes pensando</h3>
+        <br>
+        <p>tu numero es</p> <br>
+        <br>
+        <input type="text" id="Numero" value="500" disabled="true"  >
+        <br><br>
+        <button onclick="OpNum1()" class="btn btn-outline-danger"> Menor </button>
+        <button onclick="Pulsar()" class="btn btn-outline-success"> = </button>
+        <button onclick="OpNum2()" class="btn btn-outline-danger"> Mayor </button> <br>
+        <div>
+            <a href="index.html">Regresar al menu Principal</a>
+        </div>
+    </center>
+</body>
+<script>
+    let num1 = 0;
+    let num2 = 1000;
+    let intentos = 1;
+
+    function Pulsar(){
+        alert("!!Hurra lo he adivinado "+ intentos+" intentos");
+        location.reload();
+        intentos++; 
+
+    }
+
+    function OpNum1(){
+        alert("No es tu numero entiendo, intento "+intentos);
+        num2 = Math.floor((num1 + num2)/2);
+        document.getElementById("Numero").value=Math.floor((num1 + num2)/2);
+        intentos++;
+        if(intentos == 11){
+        alert("Lo siento no se ha podido adivinar tu numero :(( en los ");
+        location.reload();
+    }
+    }
+
+    function OpNum2(){
+        alert("No es tu numero entiendo, intento "+intentos);
+        num1 = Math.floor((num2 + num1)/2);
+        document.getElementById("Numero").value=Math.floor((num2 + num1)/2);
+        intentos++;
+        if(intentos == 11){
+        alert("Valla parece que no lo he podido adivinar :(( en los ");
+        location.reload();
+    }
+    }
+
+    
+</script>
+
+</html>
